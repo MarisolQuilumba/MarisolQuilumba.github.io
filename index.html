@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Perfumeria Marito</title>
+    <!-- Incluir Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Incluir jQuery y jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Incluir Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Incluir tu archivo CSS personalizado -->
+    <link rel="stylesheet" href="css/estilo.css">
+  </head>
+  <body>
+
+    <!-- Navegación -->
+<nav id="miNav" class="navbar navbar-expand-lg navbar-light bg-light flex-column align-items-center" >
+    <a class="navbar-brand "  href="#">Perfumeria</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="mujer.html">Mujer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="hombre.html">Hombre</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="nosotros.html">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="promociones.html">Promociones</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- Carrusel -->
+<div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="img/1.jpg" class="d-block w-100" alt="Imagen 1">
+        </div>
+        <div class="carousel-item">
+            <img src="img/2.jpg" class="d-block w-100" alt="Imagen 2">
+        </div>
+        <div class="carousel-item">
+            <img src="img/3.jpg" class="d-block w-100" alt="Imagen 3">
+        </div>
+        <div class="carousel-item">
+            <img src="img/4.jpg" class="d-block w-100" alt="Imagen 3">
+        </div>
+        <div class="carousel-item">
+            <img src="img/5.jpg" class="d-block w-100" alt="Imagen 3">
+        </div>
+        <div class="carousel-item">
+            <img src="img/6.png" class="d-block w-100" alt="Imagen 3">
+        </div>
+        <div class="carousel-item">
+            <img src="img/7.jpg" class="d-block w-100" alt="Imagen 3">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+    </a>
+</div>
+<!-- Introducción -->
+<div class="container">
+  <div class="marquee">
+      <p>Descubre la magia de nuestros perfumes únicos y cautivadores.</p>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <img id="imagenDinamica" src="img/perfume13.jpg" alt="" class="img-tamano-fijo"
+          onmouseover="cambiarImagen()" onmouseout="restaurarImagen()">
+          <figcaption class="figcaption-style">Nike Indigo Eau de Toilette para hombre 200ml</figcaption>
+
+    </div>
+
+    <div class="col-md-4">
+      <img id="imagenDinamica1" src="img/perfume12.jpg" alt="" class="img-tamano-fijo"
+          onmouseover="cambiarImagen1()" onmouseout="restaurarImagen1()">
+      <figcaption class="figcaption-style">Nike Pink Eau de Toilette para mujer 200ml</figcaption>
+    </div>
+
+    <div class="col-md-4">
+      <img id="imagenDinamica2" src="img/30.jpg" alt="Descripción de la imagen" class="img-tamano-fijo"
+          onmouseover="cambiarImagen2()" onmouseout="restaurarImagen2()">
+      <figcaption class="figcaption-style">Pack Nike Indigo Eau de Toilette para hombre 100ml + 30ml</figcaption>
+    </div>
+
+    <div class="col-md-4">
+      <img id="imagenDinamica3" src="img/perfume15.jpg" alt="Descripción de la imagen" class="img-tamano-fijo"
+          onmouseover="cambiarImagen3()" onmouseout="restaurarImagen3()">
+      <figcaption class="figcaption-style">Nike Blue Eau de Toilette para hombre 200ml</figcaption>
+    </div>
+
+    <div class="col-md-4">
+      <img id="imagenDinamica4" src="img/33.jpg" alt="Descripción de la imagen" class="img-tamano-fijo"
+          onmouseover="cambiarImagen4()" onmouseout="restaurarImagen4()">
+      <figcaption class="figcaption-style">Farala Original Eau de Toilette para mujer 75ml</figcaption>
+    </div>
+
+    <div class="col-md-4">
+      <img id="imagenDinamica5" src="img/35.jpg" alt="Descripción de la imagen" class="img-tamano-fijo"
+          onmouseover="cambiarImagen5()" onmouseout="restaurarImagen5()">
+      <figcaption class="figcaption-style">Spagnolo Esencia Eau de Toilette para hombre 150ml</figcaption>
+    </div>
+
+    <div class="col-md-4">
+      <img id="imagenDinamica6" src="img/50.jpg" alt="Descripción de la imagen" class="img-tamano-fijo"
+          onmouseover="cambiarImagen6()" onmouseout="restaurarImagen6()">
+      <figcaption class="figcaption-style">Pack Nike Blue Man EdT 100ml + 30ml</figcaption>
+    </div>
+
+    <div class="col-md-4">
+      <img id="imagenDinamica7" src="img/53.jpg" alt="Descripción de la imagen" class="img-tamano-fijo"
+          onmouseover="cambiarImagen7()" onmouseout="restaurarImagen7()">
+      <figcaption class="figcaption-style">Pack Nike Ultra Blue EdT 100ml + 30ml</figcaption>
+    </div>
+
+    <div class="col-md-4">
+      <img id="imagenDinamica8" src="img/54.jpg" alt="Descripción de la imagen" class="img-tamano-fijo"
+          onmouseover="cambiarImagen8()" onmouseout="restaurarImagen8()">
+      <figcaption class="figcaption-style">Nike Ultra Green Eau de Toilette para hombre 100ml</figcaption>
+    </div>
+    <div class="col-md-4">
+      <img id="imagenDinamica9" src="img/56.jpg" alt="Descripción de la imagen" class="img-tamano-fijo"
+          onmouseover="cambiarImagen9()" onmouseout="restaurarImagen9()">
+      <figcaption class="figcaption-style">El Caballo 1892 Woman Eau de Toilette 100ml</figcaption>
+    </div>
+
+    <div class="col-md-4">
+      <img id="imagenDinamica10" src="img/58.jpg" alt="Descripción de la imagen" class="img-tamano-fijo"
+          onmouseover="cambiarImagen10()" onmouseout="restaurarImagen10()">
+      <figcaption class="figcaption-style">Pack Nike Ultra Blue EdT 100ml + 30ml</figcaption>
+    </div>
+    <div class="col-md-4">
+      <img id="imagenDinamica11" src="img/60.jpg" alt="Descripción de la imagen" class="img-tamano-fijo"
+          onmouseover="cambiarImagen11()" onmouseout="restaurarImagen11()">
+      <figcaption class="figcaption-style">Spagnolo Sport Eau de Toilette para hombre 75ml</figcaption>
+    </div>
+    <div class="col-md-4">
+      <img id="imagenDinamica12" src="img/62.jpg" alt="Descripción de la imagen" class="img-tamano-fijo"
+          onmouseover="cambiarImagen12()" onmouseout="restaurarImagen12()">
+      <figcaption class="figcaption-style">Coronel Tapiocca London Eau de Toilette para hombre 75ml</figcaption>
+    </div>
+
+    <div class="col-md-4">
+      <img id="imagenDinamica13" src="img/64.jpg" alt="Descripción de la imagen" class="img-tamano-fijo"
+          onmouseover="cambiarImagen13()" onmouseout="restaurarImagen13()">
+      <figcaption class="figcaption-style">Coronel Tapiocca New York Eau de Toilette para hombre</figcaption>
+    </div>
+
+
+
+
+  </div>
+</div>
+<!-- Vinculación a tu archivo JavaScript -->
+    <script src="js/main.js"></script>
+
+
+  </body>
+  <footer class="footer mt-auto py-3 bg-light">
+  <div class="container">
+    <span class="text-muted">Copyright © 2021-2022 | De Ruy Perfumes S.A.U. Todos los derechos reservados.</span>
+  </div>
+</footer>
+
+</html>
