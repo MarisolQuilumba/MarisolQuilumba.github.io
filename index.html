@@ -281,7 +281,7 @@
       }
   
       if (productoKey) {
-        const productoRef = ref(db, `Marisol Quilumba${productoKey}`);
+        const productoRef = ref(db, `Marisol Quilumba/${productoKey}`);
         remove(productoRef)
           .then(() => {
             console.log('Producto eliminado con éxito');
