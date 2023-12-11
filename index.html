@@ -13,7 +13,73 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- Incluir tu archivo CSS personalizado -->
     <link rel="stylesheet" href="css/estilo.css">
-    
+    <style>
+      body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #f5f5f5;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+      }
+
+      form {
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          max-width: 400px;
+          width: 100%;
+      }
+
+      h1 {
+          text-align: center;
+          color: #333;
+          margin-bottom: 20px;
+      }
+
+      label {
+          display: block;
+          margin-bottom: 8px;
+      }
+
+      input,
+      textarea {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 16px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+      }
+
+      input[type="url"] {
+          font-size: 14px;
+      }
+
+      input[type="submit"],
+      .crud-button {
+          background-color: #4caf50;
+          color: #fff;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 14px;
+          margin-right: 10px;
+      }
+
+      input[type="submit"]:hover,
+      .crud-button:hover {
+          background-color: #45a049;
+      }
+
+      .crud-buttons {
+          text-align: center;
+      }
+
+  </style>
   </head>
   <body>
     <!-- Navegación -->
