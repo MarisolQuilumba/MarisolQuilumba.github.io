@@ -195,7 +195,7 @@
         consultarRegistrosPorNombre(nombreProductoBuscado);
         };
         window.consultarRegistrosPorNombre = function (nombreProductoBuscado) {
-        const registrosRef = ref(database, 'Marisol Quilumba/');
+        const registrosRef = ref(database, 'Marisol_Quilumba/');
         onValue(registrosRef, (snapshot) => {
           const data = snapshot.val();
           if (data) {
@@ -230,7 +230,7 @@
         const nuevaDescripcion = document.getElementById('descripcion').value;
   
         // Referencia a la base de datos de Firebase
-        const registrosRef = ref(database, 'Marisol Quilumba/');
+        const registrosRef = ref(database, 'Marisol_Quilumba/');
   
         // Buscar el ID del producto basado en el nombre
         onValue(registrosRef, (snapshot) => {
@@ -245,7 +245,7 @@
             }
             if (productoID) {
               // Actualizar los datos del producto en Firebase
-              const productoRef = ref(database, `Marisol Quilumba/${productoID}`);
+              const productoRef = ref(database, `Marisol_Quilumba/${productoID}`);
               update(productoRef, {
                 Nombre: nombreProducto,
                 Marca: nuevaMarca,
@@ -268,7 +268,7 @@
     //eliminar Registro
     window.eliminarProductoPorNombre = function (nombreProducto) {
     const db = getDatabase();
-    const registrosRef = ref(db, 'Marisol Quilumba/');
+    const registrosRef = ref(db, 'Marisol_Quilumba/');
     onValue(registrosRef, (snapshot) => {
       const data = snapshot.val();
       let productoKey = null;
@@ -281,7 +281,7 @@
       }
   
       if (productoKey) {
-        const productoRef = ref(db, `Marisol Quilumba/${productoKey}`);
+        const productoRef = ref(db, `Marisol_Quilumba/${productoKey}`);
         remove(productoRef)
           .then(() => {
             console.log('Producto eliminado con éxito');
