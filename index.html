@@ -143,12 +143,157 @@
       <textarea id="descripcion" required></textarea>
 
       <!-- CRUD -->
-      <input type="submit" value="Consultar">
-      <input type="submit" value="Insertar ">
-      <input type="submit" value="Actualizar">
-      <input type="submit" value="Eliminar">
+      <input type="submit" value="Consultar" onclick="buscarProductoPorNombre">
+      <input type="submit" value="Insertar " onclick="crearRegistro">
+      <input type="submit" value="Actualizar" onclick="actualizarDatosProducto">
+      <input type="submit" value="Eliminar" onclick="eliminarProductoPorNombre(document.getElementById('nombre').value)">
 
     </form>
+
+    <!--CONECCION BASE DE DATOS-->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+      import { getDatabase, ref, push, onValue, remove, update } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBNDDXIqtluJSZluxB6IuoWIAudmato31k",
+        authDomain: "alexander-4cf75.firebaseapp.com",
+        databaseURL: "https://alexander-4cf75-default-rtdb.firebaseio.com/",
+        projectId: "alexander-4cf75",
+        storageBucket: "alexander-4cf75.appspot.com",
+        messagingSenderId: "794303211022",
+        appId: "1:794303211022:web:d4be7df29158e980d57e5f"
+        
+      };
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database= getDatabase(app);
+      window.crearRegistro = function () {
+      const nombre = document.getElementById("nombre").value;
+      const marca = document.getElementById("marca").value;
+      const categoria = document.getElementById("categoria").value;
+      const precio = document.getElementById("precio").value;
+      console.log(nombre, Descripción, Precio, Cantidad);
+      push( 
+        ref(database, 'Alexander Iza'),
+        {
+          Nombre: nombre,
+          Marca: marca,
+          Categoria: categoria,
+          Precio: precio 
+        });
+      }
+
+      //Consultar Datos
+      window.buscarProductoPorNombre = function () {
+      const nombreProductoBuscado = document.getElementById('nombreProducto').value;
+      consultarRegistrosPorNombre(nombreProductoBuscado);
+      };
+      window.consultarRegistrosPorNombre = function (nombreProductoBuscado) {
+      const registrosRef = ref(database, 'Alexander Iza/');
+      onValue(registrosRef, (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+          let productoEncontrado = null;
+          for (const key in data) {
+            if (data[key].Nombre === nombreProductoBuscado) {
+              productoEncontrado = data[key];
+              break;
+            }
+          }
+          if (productoEncontrado) {
+            document.getElementById('nombreProducto').value = productoEncontrado.Nombre || '';
+            document.getElementById('descripcionProducto').value = productoEncontrado.Descripción || '';
+            document.getElementById('precioProducto').value = productoEncontrado.Precio || '';
+            document.getElementById('cantidadProducto').value = productoEncontrado.Cantidad || '';
+          } else {
+            // Manejar el caso en que el producto no se encuentra
+            console.log('Producto no encontrado');
+          }
+        }
+      }, {
+        onlyOnce: true
+        });
+      };
+      //Actualizar datos
+      window.actualizarDatosProducto = function () {
+      const nombreProducto = document.getElementById('nombreProducto').value;
+      const nuevaDescripcion = document.getElementById('descripcionProducto').value;
+      const nuevoPrecio = document.getElementById('precioProducto').value;
+      const nuevaCantidad = document.getElementById('cantidadProducto').value;
+
+      // Referencia a la base de datos de Firebase
+      const registrosRef = ref(database, 'Alexander Iza/');
+
+      // Buscar el ID del producto basado en el nombre
+      onValue(registrosRef, (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+          let productoID = null;
+          for (const key in data) {
+            if (data[key].Nombre === nombreProducto) {
+              productoID = key;
+              break;
+            }
+          }
+          if (productoID) {
+            // Actualizar los datos del producto en Firebase
+            const productoRef = ref(database, `Alexander Iza/${productoID}`);
+            update(productoRef, {
+              Nombre: nombreProducto,
+              Descripción: nuevaDescripcion,
+              Precio: nuevoPrecio,
+              Cantidad: nuevaCantidad
+            }).then(() => {
+              console.log('Datos actualizados con éxito');
+            }).catch((error) => {
+              console.error('Error al actualizar datos:', error);
+            });
+          } else {
+            console.log('Producto no encontrado para actualizar');
+          }
+        }
+      }, {
+        onlyOnce: true
+      });
+    };     
+  //eliminar Registro
+  window.eliminarProductoPorNombre = function (nombreProducto) {
+  const db = getDatabase();
+  const registrosRef = ref(db, 'Alexander Iza/');
+  onValue(registrosRef, (snapshot) => {
+    const data = snapshot.val();
+    let productoKey = null;
+
+    for (const key in data) {
+      if (data[key].Nombre === nombreProducto) {
+        productoKey = key;
+        break;
+      }
+    }
+
+    if (productoKey) {
+      const productoRef = ref(db, `Alexander Iza/${productoKey}`);
+      remove(productoRef)
+        .then(() => {
+          console.log('Producto eliminado con éxito');
+        })
+        .catch((error) => {
+          console.error('Error al eliminar el producto:', error);
+        });
+    } else {
+      console.log('Producto no encontrado para eliminar');
+    }
+  }, {
+    onlyOnce: true
+  });
+};
+        
+        
+    </script>
 
 
 
