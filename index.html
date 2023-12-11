@@ -13,59 +13,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <!-- Incluir tu archivo CSS personalizado -->
     <link rel="stylesheet" href="css/estilo.css">
-    <style>
-      body {
-          font-family: Arial, sans-serif;
-          background-color: #f4f4f4;
-          margin: 0;
-          padding: 0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-      }
-
-      form {
-          background-color: #fff;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-          max-width: 400px;
-          width: 100%;
-      }
-
-      h1 {
-          text-align: center;
-          color: #333;
-      }
-
-      label {
-          display: block;
-          margin-bottom: 8px;
-      }
-
-      input,
-      textarea,
-      select {
-          width: 100%;
-          padding: 10px;
-          margin-bottom: 16px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          box-sizing: border-box;
-      }
-
-      input[type="submit"] {
-          background-color: #4caf50;
-          color: #fff;
-          cursor: pointer;
-      }
-
-      input[type="submit"]:hover {
-          background-color: #45a049;
-      }
-
-  </style>
   </head>
   <body>
 
@@ -135,41 +82,60 @@
     </a>
 </div>
 <!-- Introducción -->
-<form action="procesar_insercion.php" method="post">
-  <h1>Formulario de Inserción de Perfume</h1>
+<div class="container">
+  <div class="marquee">
+      <p>Descubre la magia de nuestros perfumes únicos y cautivadores.</p>
+  </div>
+  <div class="row">
+    <form action="procesar_insercion.php" method="post">
+      <h1>Formulario de Inserción de Perfume</h1>
 
-  <!-- Sección de Información del Perfume -->
-  <label for="nombre">Nombre del Perfume:</label>
-  <input type="text" id="nombre" name="nombre" required>
+      <!-- Sección de Información del Perfume -->
+      <label for="nombre">Nombre del Perfume:</label>
+      <input type="text" id="nombre" name="nombre" required>
 
-  <label for="marca">Marca:</label>
-  <input type="text" id="marca" name="marca" required>
+      <label for="marca">Marca:</label>
+      <input type="text" id="marca" name="marca" required>
 
-  <label for="categoria">Categoría:</label>
-  <input type="text" id="categoria" name="categoria" required>
+      <label for="categoria">Categoría:</label>
+      <input type="text" id="categoria" name="categoria" required>
 
-  <label for="fragancia">Fragancia:</label>
-  <input type="text" id="fragancia" name="fragancia" required>
+      <label for="fragancia">Fragancia:</label>
+      <input type="text" id="fragancia" name="fragancia" required>
 
-  <label for="tamanio">Tamaño/Volumen:</label>
-  <input type="text" id="tamanio" name="tamanio" required>
+      <label for="tamanio">Tamaño/Volumen:</label>
+      <input type="text" id="tamanio" name="tamanio" required>
 
-  <label for="precio">Precio:</label>
-  <input type="number" id="precio" name="precio" step="0.01" required>
+      <label for="precio">Precio:</label>
+      <input type="number" id="precio" name="precio" step="0.01" required>
 
-  <label for="descripcion">Descripción:</label>
-  <textarea id="descripcion" name="descripcion" required></textarea>
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" name="descripcion" required></textarea>
 
-  <!-- Sección de Imagen del Perfume -->
-  <label for="imagen">URL de la Imagen:</label>
-  <input type="url" id="imagen" name="imagen" required>
+      <!-- Sección de Imagen del Perfume -->
+      <label for="imagen">URL de la Imagen:</label>
+      <input type="url" id="imagen" name="imagen" required>
 
-  <!-- Botón de Envío -->
-  <input type="submit" value="Insertar Perfume">
+      <!-- Botón de Envío -->
+      <input type="submit" value="Insertar Perfume">
 
-</form>
+  </form>
 
- 
+
+
+
+
+
+  
+
+
+
+
+  </div>
+  <div class="marquee">
+    <p>Descubre la magia de nuestros perfumes únicos y cautivadores.</p>
+    <p>Solcecito</p>
+</div>
 </div>
 <!-- Vinculación a tu archivo JavaScript -->
     <script src="js/main.js"></script>
