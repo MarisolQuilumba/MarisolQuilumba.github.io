@@ -176,6 +176,7 @@
         const marca = document.getElementById("marca").value;
         const categoria = document.getElementById("categoria").value;
         const precio = document.getElementById("precio").value;
+        const descripcion = document.getElementById("descripcion").value;
         console.log(nombre, marca, categoria, precio);
         push( 
           ref(database, 'Marisol Quilumba'),
@@ -183,7 +184,8 @@
             Nombre: nombre,
             Marca: marca,
             Categoria: categoria,
-            Precio: precio 
+            Precio: precio,
+            Descripción: descripcion
           });
         }
   
@@ -209,6 +211,7 @@
               document.getElementById('marca').value = productoEncontrado.Marca || '';
               document.getElementById('categoria').value = productoEncontrado.Categoria || '';
               document.getElementById('precio').value = productoEncontrado.Precio || '';
+              document.getElementById('descripcion').value = productoEncontrado.Descripción || '';
             } else {
               // Manejar el caso en que el producto no se encuentra
               console.log('Producto no encontrado');
@@ -220,13 +223,14 @@
         };
         //Actualizar datos
         window.actualizarDatosProducto = function () {
-        const nombreProducto = document.getElementById('nombreProducto').value;
-        const nuevaDescripcion = document.getElementById('descripcionProducto').value;
-        const nuevoPrecio = document.getElementById('precioProducto').value;
-        const nuevaCantidad = document.getElementById('cantidadProducto').value;
+        const nombreProducto = document.getElementById('nombre').value;
+        const nuevaMarca = document.getElementById('marca').value;
+        const nuevaCategoria = document.getElementById('categoria').value;
+        const nuevoPrecio = document.getElementById('precio').value;
+        const nuevaDescripcion = document.getElementById('descripcion').value;
   
         // Referencia a la base de datos de Firebase
-        const registrosRef = ref(database, 'Alexander Iza/');
+        const registrosRef = ref(database, 'Marisol Quilumba/');
   
         // Buscar el ID del producto basado en el nombre
         onValue(registrosRef, (snapshot) => {
@@ -241,12 +245,13 @@
             }
             if (productoID) {
               // Actualizar los datos del producto en Firebase
-              const productoRef = ref(database, `Alexander Iza/${productoID}`);
+              const productoRef = ref(database, `Marisol Quilumba/${productoID}`);
               update(productoRef, {
                 Nombre: nombreProducto,
-                Descripción: nuevaDescripcion,
+                Marca: nuevaMarca,
+                Categoria: nuevaCategoria,
                 Precio: nuevoPrecio,
-                Cantidad: nuevaCantidad
+                Descripción: nuevaDescripcion
               }).then(() => {
                 console.log('Datos actualizados con éxito');
               }).catch((error) => {
@@ -263,7 +268,7 @@
     //eliminar Registro
     window.eliminarProductoPorNombre = function (nombreProducto) {
     const db = getDatabase();
-    const registrosRef = ref(db, 'Alexander Iza/');
+    const registrosRef = ref(db, 'Marisol Quilumba/');
     onValue(registrosRef, (snapshot) => {
       const data = snapshot.val();
       let productoKey = null;
@@ -276,7 +281,7 @@
       }
   
       if (productoKey) {
-        const productoRef = ref(db, `Alexander Iza/${productoKey}`);
+        const productoRef = ref(db, `Marisol Quilumba${productoKey}`);
         remove(productoRef)
           .then(() => {
             console.log('Producto eliminado con éxito');
