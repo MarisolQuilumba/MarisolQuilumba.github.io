@@ -60,7 +60,7 @@
           font-size: 14px;
       }
 
-      input[type="button"],
+      input[type="submit"],
       .crud-button {
           background-color: #4caf50;
           color: #fff;
@@ -72,7 +72,7 @@
           margin-right: 10px;
       }
 
-      input[type="button"]:hover,
+      input[type="submit"]:hover,
       .crud-button:hover {
           background-color: #45a049;
       }
@@ -143,10 +143,10 @@
         <textarea id="descripcion" required></textarea>
   
         <!-- CRUD -->
-        <input type="button" value="Consultar" onclick="buscarProductoPorNombre()">
-        <input type="button" value="Insertar " onclick="crearRegistro()">
-        <input type="button" value="Actualizar" onclick="actualizarDatosProducto()">
-        <input type="button" value="Eliminar" onclick="eliminarProductoPorNombre(document.getElementById('nombre').value)">
+        <input type="button" style="background-color: green;" value="Insertar " onclick="crearRegistro()">
+        <input type="button" style="background-color: #6DB9EF;" value="Consultar" onclick="buscarProductoPorNombre()">
+        <input type="button" style="background-color: #FFA732;"value="Actualizar" onclick="actualizarDatosProducto()">
+        <input type="button" style="background-color: #EF4040;" value="Eliminar" onclick="eliminarProductoPorNombre(document.getElementById('nombre').value)">
   
       </form>
   
