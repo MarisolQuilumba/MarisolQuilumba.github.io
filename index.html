@@ -189,11 +189,11 @@
   
         //Consultar Datos
         window.buscarProductoPorNombre = function () {
-        const nombreProductoBuscado = document.getElementById('nombreProducto').value;
+        const nombreProductoBuscado = document.getElementById('nombre').value;
         consultarRegistrosPorNombre(nombreProductoBuscado);
         };
         window.consultarRegistrosPorNombre = function (nombreProductoBuscado) {
-        const registrosRef = ref(database, 'Alexander Iza/');
+        const registrosRef = ref(database, 'Marisol Quilumba/');
         onValue(registrosRef, (snapshot) => {
           const data = snapshot.val();
           if (data) {
@@ -205,10 +205,10 @@
               }
             }
             if (productoEncontrado) {
-              document.getElementById('nombreProducto').value = productoEncontrado.Nombre || '';
-              document.getElementById('descripcionProducto').value = productoEncontrado.Descripción || '';
-              document.getElementById('precioProducto').value = productoEncontrado.Precio || '';
-              document.getElementById('cantidadProducto').value = productoEncontrado.Cantidad || '';
+              document.getElementById('nombre').value = productoEncontrado.Nombre || '';
+              document.getElementById('marca').value = productoEncontrado.Marca || '';
+              document.getElementById('categoria').value = productoEncontrado.Categoria || '';
+              document.getElementById('precio').value = productoEncontrado.Precio || '';
             } else {
               // Manejar el caso en que el producto no se encuentra
               console.log('Producto no encontrado');
