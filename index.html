@@ -186,8 +186,21 @@
             Categoria: categoria,
             Precio: precio,
             Descripción: descripcion
-          });
-        }
+          }).then(() => {
+        // Mensaje de éxito y limpieza de los campos
+        alert('Se Registrado con éxito', 'exito');
+        document.getElementById("nombre").value = '';
+        document.getElementById("marca").value = '';
+        document.getElementById("categoria").value = '';
+        document.getElementById("precio").value = '';
+        document.getElementById("descripcion").value = '';
+
+      }).catch((error) => {
+        // Mensaje de error
+        window.alert('Error al registrar el producto: ' + error.message, 'error');
+      });
+        };
+        
   
         //Consultar Datos
         window.buscarProductoPorNombre = function () {
