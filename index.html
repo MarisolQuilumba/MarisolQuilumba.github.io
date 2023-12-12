@@ -270,10 +270,11 @@
                 Descripción: nuevaDescripcion
               }).then(() => {
               alert('Se actualizo los datos con éxito');
-              document.getElementById("nombreProducto").value = '';
-              document.getElementById("descripcionProducto").value = '';
-              document.getElementById("precioProducto").value = '';
-              document.getElementById("cantidadProducto").value = '';
+              document.getElementById("nombre").value = '';
+              document.getElementById("Producto").value = '';
+              document.getElementById("Marca").value = '';
+              document.getElementById("Categoria").value = '';
+              document.getElementById("Descripcion").value = '';
               }).catch((error) => {
                 console.error('No se actualizo los datos:', error);
               });
