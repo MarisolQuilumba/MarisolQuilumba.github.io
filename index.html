@@ -305,7 +305,13 @@
         const productoRef = ref(db, `Marisol_Quilumba/${productoKey}`);
         remove(productoRef)
           .then(() => {
-            console.log('Producto eliminado con éxito');
+            window.alert('El producto fue eliminado con éxito');
+          document.getElementById("nombre").value = '';
+          document.getElementById("marca").value = '';
+          document.getElementById("categoria").value = '';
+          document.getElementById("precio").value = '';
+          document.getElementById("descripcion").value = '';
+
           })
           .catch((error) => {
             console.error('Error al eliminar el producto:', error);
