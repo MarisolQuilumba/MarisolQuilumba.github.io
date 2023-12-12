@@ -219,16 +219,18 @@
                 break;
               }
             }
+            
             if (productoEncontrado) {
+              alert('Producto encontrado: ' + productoEncontrado.Nombre);
               document.getElementById('nombre').value = productoEncontrado.Nombre || '';
               document.getElementById('marca').value = productoEncontrado.Marca || '';
               document.getElementById('categoria').value = productoEncontrado.Categoria || '';
               document.getElementById('precio').value = productoEncontrado.Precio || '';
               document.getElementById('descripcion').value = productoEncontrado.Descripción || '';
-              alert('Producto encontrado: ' + productoEncontrado.Nombre);
+          
             } else {
               // Manejar el caso en que el producto no se encuentra
-              alert('Producto no encontrado');;
+              alert('Producto no encontrado');
             }
           }
         }, {
